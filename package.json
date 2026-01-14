@@ -1,0 +1,27 @@
+{
+  "name": "electron-note",
+  "version": "1.0.0",
+  "description": "A desktop application built using Electron JS.",
+  "keywords": [
+    "electron-note"
+  ],
+  "homepage": "https://github.com/ferdoushasanpr/Electron-Note-Desktop-Application#readme",
+  "bugs": {
+    "url": "https://github.com/ferdoushasanpr/Electron-Note-Desktop-Application/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferdoushasanpr/Electron-Note-Desktop-Application.git"
+  },
+  "license": "MIT",
+  "author": "Ferdous Hasan",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7"
+  }
+}
