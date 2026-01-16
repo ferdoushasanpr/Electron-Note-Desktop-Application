@@ -1,0 +1,104 @@
+:root {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --accent-color: #bb86fc;
+  --text-main: #e0e0e0;
+  --text-dim: #a0a0a0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+/* Grid Layout for Notes */
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding-bottom: 80px;
+}
+
+/* Note Card Styling */
+.note-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #333;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.note-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+}
+
+.note-title {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.note-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.topic-tag {
+  background: rgba(187, 134, 252, 0.1);
+  color: var(--accent-color);
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.note-date {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* Floating Action Button */
+.add-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: scale 0.2s;
+}
+
+.add-btn:hover {
+  scale: 1.1;
+}
