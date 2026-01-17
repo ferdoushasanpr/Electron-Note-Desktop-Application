@@ -55,6 +55,11 @@ const notes: Note[] = [
 
 const container = document.getElementById("notes-container");
 
+const modal = document.getElementById("note-modal") as HTMLElement;
+const addBtn = document.getElementById("add-note") as HTMLButtonElement;
+const closeBtn = document.getElementById("close-modal") as HTMLButtonElement;
+const saveBtn = document.getElementById("save-note-btn") as HTMLButtonElement;
+
 function renderNotes() {
   if (!container) return;
   container.innerHTML = ""; // Clear container
@@ -75,9 +80,54 @@ function renderNotes() {
   });
 }
 
-document.getElementById("add-note")?.addEventListener("click", () => {
-  alert("Create new note functionality coming soon!");
+// Show Modal
+addBtn.addEventListener("click", () => {
+  modal.style.display = "flex";
 });
 
 // Initialize display
 renderNotes();
+
+// Hide Modal
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Save Logic
+saveBtn.addEventListener("click", () => {
+  const title = (
+    document.getElementById("note-title-input") as HTMLInputElement
+  ).value;
+  const topicsRaw = (
+    document.getElementById("note-topics-input") as HTMLInputElement
+  ).value;
+  const content = (
+    document.getElementById("note-content-input") as HTMLTextAreaElement
+  ).value;
+
+  if (!title || !content) {
+    alert("Please fill in the title and content!");
+    return;
+  }
+
+  const newNote: Note = {
+    id: Date.now(),
+    title: title,
+    topics: topicsRaw
+      .split(",")
+      .map((t) => t.trim())
+      .filter((t) => t !== ""),
+    date: new Date().toISOString().split("T")[0],
+  };
+
+  // Add to our notes array and re-render
+  notes.push(newNote);
+  renderNotes();
+
+  // Reset and Close
+  (document.getElementById("note-title-input") as HTMLInputElement).value = "";
+  (document.getElementById("note-topics-input") as HTMLInputElement).value = "";
+  (document.getElementById("note-content-input") as HTMLTextAreaElement).value =
+    "";
+  modal.style.display = "none";
+});
