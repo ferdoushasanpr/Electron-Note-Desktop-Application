@@ -385,7 +385,7 @@ module.exports = require("events");
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("75134a874eb119be41b1")
+/******/ 		__webpack_require__.h = () => ("5b633c4240e96c111619")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -857,6 +857,10 @@ module.exports = require("events");
 /******/ 	(() => {
 /******/ 		__webpack_require__.p = "/";
 /******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat */
+/******/ 	
+/******/ 	if (typeof __webpack_require__ !== 'undefined') __webpack_require__.ab = "D:\\programming\\electron-note\\.webpack\\renderer" + "/native_modules/";
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
