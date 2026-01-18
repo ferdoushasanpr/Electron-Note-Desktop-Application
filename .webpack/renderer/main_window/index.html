@@ -9,6 +9,7 @@
     />
   <script defer src="/main_window/index.js"></script></head>
   <body>
+    <!--Home Screen Starts-->
     <header>
       <h1>Electron Note</h1>
     </header>
@@ -16,7 +17,8 @@
     <div id="notes-container"></div>
 
     <button class="add-btn" id="add-note">+</button>
-
+    <!--Home Screen Ends-->
+    <!--Add Note Screen Starts-->
     <div id="note-modal" class="modal-overlay" style="display: none">
       <div class="modal-content">
         <div class="modal-header">
@@ -54,5 +56,52 @@
         <button id="save-note-btn" class="save-btn">Save Note</button>
       </div>
     </div>
+    <!--Add Note Screen Ends-->
+    <!--Note Screen Starts-->
+    <div id="note-detail-view" style="display: none; padding: 20px">
+      <button
+        id="back-to-home"
+        style="
+          background: none;
+          border: none;
+          color: var(--accent-color);
+          cursor: pointer;
+          margin-bottom: 20px;
+        "
+      >
+        ← Back to Notes
+      </button>
+
+      <h1 id="detail-title" style="font-size: 2.5rem; margin-bottom: 10px"></h1>
+
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 30px;
+        "
+      >
+        <div id="detail-topics" class="note-topics"></div>
+        <div id="detail-date" class="note-date"></div>
+      </div>
+
+      <hr style="border: 0; border-top: 1px solid #333; margin-bottom: 30px" />
+
+      <div
+        id="detail-content"
+        style="
+          line-height: 1.6;
+          font-size: 1.1rem;
+          color: var(--text-main);
+          white-space: pre-wrap;
+        "
+      ></div>
+
+      <button id="summarize-btn" class="ai-btn">
+        <span class="sparkle">✨</span> Summarize with AI
+      </button>
+    </div>
+    <!--Note Screen Ends-->
   </body>
 </html>
