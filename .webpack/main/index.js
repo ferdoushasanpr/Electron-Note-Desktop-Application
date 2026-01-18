@@ -1029,6 +1029,8 @@ const createWindow = () => {
     const mainWindow = new electron_1.BrowserWindow({
         height: 600,
         width: 800,
+        minHeight: 600,
+        minWidth: 550,
         webPreferences: {
             preload: 'D:\\programming\\electron-note\\.webpack\\renderer\\main_window\\preload.js',
         },
